@@ -118,7 +118,15 @@ button:active {
     text-decoration: underline;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
     .card {
         padding: 40px 24px;
     }
@@ -126,6 +134,21 @@ button:active {
     .card h2 {
         font-size: 1.75rem;
         margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 32px 20px;
+    }
+
+    .card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
     }
 
     input {
@@ -136,5 +159,9 @@ button:active {
     button {
         padding: 10px 28px;
         font-size: 0.9rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
     }
 }

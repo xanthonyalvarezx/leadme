@@ -13,7 +13,7 @@
     <div class="container">
         <div class="card">
             <h2>Login</h2>
-            <form action="/auth/login" method="POST">
+            <form action="/auth/submitlogin" method="POST">
                 @csrf
                 <input type="email" placeholder="Email" name="email" required>
                 <input type="password" placeholder="Password" name="password" required>

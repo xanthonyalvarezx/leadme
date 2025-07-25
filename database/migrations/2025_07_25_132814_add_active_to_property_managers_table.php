@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('job', function (Blueprint $table) {
-            $table->text('details')->change();
+        Schema::table('property_managers', function (Blueprint $table) {
+            $table->boolean('active')->default(true)->after('type');
         });
     }
 
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('job', function (Blueprint $table) {
-            $table->string('details')->change();
+        Schema::table('property_managers', function (Blueprint $table) {
+            $table->dropColumn('active');
         });
     }
 };
