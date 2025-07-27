@@ -1,7 +1,9 @@
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-brand">
-            <a href="/" class="footer-logo">LeadMe</a>
+            <a href="/" class="footer-logo">
+                <img src="{{ asset('images/lead_me_logo.png') }}" alt="LeadMe Logo" class="footer-logo-image">
+            </a>
             <span class="footer-tagline">Lead management made simple</span>
         </div>
 

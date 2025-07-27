@@ -1,0 +1,143 @@
+/* Mobile Responsive Enhancements */
+
+/* Ensure proper touch targets */
+button,
+a,
+input[type="submit"],
+input[type="button"],
+select {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Improve form elements on mobile */
+input,
+textarea,
+select {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+}
+
+/* Better scrolling on mobile */
+html,
+body {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* Prevent horizontal scrolling */
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Improve table responsiveness */
+table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+}
+
+/* Better focus states for accessibility */
+button:focus,
+a:focus,
+input:focus,
+select:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Improve text readability on mobile */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Better spacing for mobile */
+@media (max-width: 768px) {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Improve button spacing */
+    .btn,
+    button {
+        margin: 4px 0;
+    }
+
+    /* Better form spacing */
+    form {
+        gap: 12px;
+    }
+
+    /* Improve card spacing */
+    .card {
+        margin: 8px 0;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    /* Reduce font sizes for better fit */
+    body {
+        font-size: 14px;
+    }
+
+    /* Improve button sizing */
+    .btn,
+    button {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    /* Better input sizing */
+    input,
+    select,
+    textarea {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+}
+
+/* Landscape orientation fixes */
+@media (max-height: 500px) and (orientation: landscape) {
+    .main-content {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .leads-container {
+        padding: 0.5rem;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Ensure crisp images and text */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    /* Add dark mode styles if needed in the future */
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

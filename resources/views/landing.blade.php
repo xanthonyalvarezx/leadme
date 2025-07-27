@@ -9,17 +9,22 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="card login-card">
-            <h2>Login</h2>
-            <p>Welcome back! Sign in to your account to continue managing your leads and growing your business.</p>
-            <a href="auth/login">Sign In</a>
+    <div class="main-content">
+        <div class="logo-container">
+            <img src="{{ asset('images/lead_me_logo.png') }}" alt="LeadMe Logo" class="logo">
         </div>
+        <div class="container">
+            <div class="card login-card">
+                <h2>Login</h2>
+                <p>Welcome back! Sign in to your account to continue managing your leads and growing your business.</p>
+                <a href="auth/login">Log In</a>
+            </div>
 
-        <div class="card register-card">
-            <h2>Register</h2>
-            <p>Join LeadMe today! Create your account and start building meaningful connections with your leads.</p>
-            <a href="auth/register">Get Started</a>
+            <div class="card register-card">
+                <h2>Register</h2>
+                <p>Join LeadMe today! Create your account and start building meaningful connections with your leads.</p>
+                <a href="auth/register">Get Started</a>
+            </div>
         </div>
     </div>
 </body>

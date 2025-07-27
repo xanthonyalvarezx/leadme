@@ -13,7 +13,24 @@
     <div class="container">
         <div class="card">
             <h2>Register</h2>
-            <form action="/auth/register" method="POST">
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            <form action="/auth/submitregister" method="POST">
                 @csrf
                 <input type="text" placeholder="Name" name="name" required>
                 <input type="email" placeholder="Email" name="email" required>
