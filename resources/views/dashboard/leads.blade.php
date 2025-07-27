@@ -73,7 +73,7 @@
                                 <form action="/dashboard/saveContact" method="post" class="save-contact-form">
                                     @csrf
                                     <button type="button" class="save-contact-btn"
-                                        onclick="openSaveContactModal({{ $property_manager->id }}, {{ json_encode($property_manager->name) }}, {{ json_encode($property_manager->name) }}, {{ json_encode($property_manager->phone) }}, {{ json_encode($property_manager->email ?? 'N/A') }}, {{ json_encode($property_manager->address) }}, {{ json_encode($property_manager->city) }}, {{ json_encode($property_manager->state ?? 'N/A') }}, {{ json_encode($property_manager->zip ?? 'N/A') }}, {{ json_encode($property_manager->type) }})">
+                                        onclick="openSaveContactModal({{ $property_manager->id }}, {{ json_encode($property_manager->name) }}, {{ json_encode($property_manager->name) }}, {{ json_encode($property_manager->phone) }}, {{ json_encode($property_manager->email ?? 'N/A') }}, {{ json_encode($property_manager->address) }}, {{ json_encode($property_manager->city) }}, {{ json_encode($property_manager->type) }})">
                                         <i class="fa-solid fa-save"></i>
                                         Save Contact
                                     </button>
@@ -192,10 +192,12 @@ $showFirst = $start > 2;
                                     <label>Phone:</label>
                                     <span id="modalPhone"></span>
                                 </div>
-                                <div class="detail-item">
+
+                                <div class="detail-item" id="emailDetailItem" style="display: none;">
                                     <label>Email:</label>
                                     <span id="modalEmail"></span>
                                 </div>
+
                                 <div class="detail-item">
                                     <label>Address:</label>
                                     <span id="modalAddress"></span>
@@ -203,14 +205,6 @@ $showFirst = $start > 2;
                                 <div class="detail-item">
                                     <label>City:</label>
                                     <span id="modalCity"></span>
-                                </div>
-                                <div class="detail-item">
-                                    <label>State:</label>
-                                    <span id="modalState"></span>
-                                </div>
-                                <div class="detail-item">
-                                    <label>ZIP:</label>
-                                    <span id="modalZip"></span>
                                 </div>
                                 <div class="detail-item">
                                     <label>Type:</label>
@@ -236,18 +230,26 @@ $showFirst = $start > 2;
 
         <script>
             // Modal functions
-            function openSaveContactModal(id, companyName, contactName, phone, email, address, city, state, zip, type) {
+            function openSaveContactModal(id, companyName, contactName, phone, email, address, city, type) {
                 try {
                     document.getElementById('contactId').value = id || '';
                     document.getElementById('modalCompanyName').textContent = companyName || 'N/A';
                     document.getElementById('modalContactName').textContent = contactName || 'N/A';
                     document.getElementById('modalPhone').textContent = phone || 'N/A';
-                    document.getElementById('modalEmail').textContent = email || 'N/A';
                     document.getElementById('modalAddress').textContent = address || 'N/A';
                     document.getElementById('modalCity').textContent = city || 'N/A';
-                    document.getElementById('modalState').textContent = state || 'N/A';
-                    document.getElementById('modalZip').textContent = zip || 'N/A';
                     document.getElementById('modalType').textContent = type || 'N/A';
+
+                    // Show email field only if email exists and is not 'N/A'
+                    const emailDetailItem = document.getElementById('emailDetailItem');
+                    const modalEmail = document.getElementById('modalEmail');
+                    if (email && email !== 'N/A' && email.trim() !== '') {
+                        modalEmail.textContent = email;
+                        emailDetailItem.style.display = 'flex';
+                    } else {
+                        emailDetailItem.style.display = 'none';
+                    }
+
                     document.getElementById('saveContactModal').style.display = 'block';
                 } catch (error) {
                     console.error('Error opening modal:', error);

@@ -79,13 +79,6 @@
                                 </div>
                             @endif
 
-                            @if ($contact->yellowpages_profile)
-                                <div class="detail-item">
-                                    <i class="fa-solid fa-building"></i>
-                                    <a href="{{ $contact->yellowpages_profile }}" target="_blank"
-                                        class="btn-profile">View Profile</a>
-                                </div>
-                            @endif
                         </div>
 
                         <div class="contact-actions">

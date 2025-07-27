@@ -683,8 +683,8 @@
     margin: 5% auto;
     padding: 0;
     border-radius: 16px;
-    width: 90%;
-    max-width: 600px;
+    width: 95%;
+    max-width: 900px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.2);
     animation: modalSlideIn 0.3s ease-out;
@@ -744,9 +744,9 @@
 
 .detail-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .detail-item {
@@ -771,6 +771,11 @@
     background: rgba(102, 126, 234, 0.05);
     border-radius: 6px;
     border-left: 3px solid #667eea;
+}
+
+/* Override hover effect for modal detail items */
+.modal .detail-item:hover {
+    background: transparent;
 }
 
 .notes-section {
